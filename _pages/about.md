@@ -23,6 +23,10 @@ AI Researcher: Generative Models, Vision-Language Models, Reinforcement Learning
 I share my writing on [Medium](https://medium.com/@ai2060).  
 My Google Scholar profile: [Google Scholar](https://scholar.google.com/citations?user=5RsTfwYAAAAJ).
 
+My most popular blog: [A Complete Mathematical Derivation of DDPM: Denoising Diffusion Probabilistic Models](https://medium.com/@ai2060/denoising-diffusion-probabilistic-models-9ff0bfc98167).  
+
+
+
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
