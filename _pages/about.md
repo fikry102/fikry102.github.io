@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+# subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
@@ -18,8 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-
-AI Researcher | Generative Models, Vision-Language Models, Reinforcement Learning
+AI Researcher: Generative Models, Vision-Language Models, Reinforcement Learning
 
 I share my writing on [Medium](https://medium.com/@ai2060).  
 My Google Scholar profile: [Google Scholar](https://scholar.google.com/citations?user=5RsTfwYAAAAJ).
