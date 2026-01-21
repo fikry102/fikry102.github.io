@@ -25,6 +25,7 @@ My Google Scholar profile: [Google Scholar](https://scholar.google.com/citations
 
 My most popular blog: [A Complete Mathematical Derivation of DDPM: Denoising Diffusion Probabilistic Models](https://medium.com/@ai2060/denoising-diffusion-probabilistic-models-9ff0bfc98167).  
 
+My most popular github repo: [Algorithm Template](https://github.com/fikry102/algorithm_template).
 
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
