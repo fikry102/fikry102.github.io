@@ -312,8 +312,8 @@ display_categories: [ "external-services" ] # these categories will be displayed
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [ Einstein ]
-  first_name: [ Albert, A. ]
+  last_name: [ Lyu ]
+  first_name: [ Qiang ]
 
   style: apa
   locale: en
