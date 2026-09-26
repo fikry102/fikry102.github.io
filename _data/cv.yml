@@ -84,9 +84,9 @@
 - title: Technical Skills
   type: nested_list
   contents:
-    - title: Programming and frameworks
+    - title: Programming and tools
       items:
         - Python, PyTorch, C/C++, Hugging Face, Git, Linux, LaTeX
-    - title: AI-assisted development
+    - title: AI-assisted programming
       items:
         - Claude Code and Codex
