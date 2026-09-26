@@ -24,7 +24,7 @@ My recent work focuses on reliable video reasoning, text-to-image generation, cr
 
 I have worked on video generation, multimodal reasoning, and generative-model optimization during research internships at Alibaba Cloud, Youku, RightBrainAI, and Megvii. I expect to complete my PhD in June 2027.
 
-You can find my work on [Google Scholar](https://scholar.google.com/citations?user=5RsTfwYAAAAJ), [GitHub](https://github.com/fikry102), and [my CV](/assets/pdf/qiang-lyu-cv.pdf).
+You can find my work on [Google Scholar](https://scholar.google.com/citations?user=5RsTfwYAAAAJ) and [GitHub](https://github.com/fikry102).
 
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
