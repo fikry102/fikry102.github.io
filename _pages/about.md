@@ -13,19 +13,18 @@ profile:
   #   <p>123 your address street</p>
   #   <p>Your City, State 12345</p>
 
-news: true # includes a list of news items
+news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-AI Researcher: Generative Models, Vision-Language Models, Reinforcement Learning
+I am a direct-entry PhD student in Computer Science at the University of Chinese Academy of Sciences (UCAS), where I work on **generative models, multimodal understanding, and reinforcement learning**.
 
-I share my writing on [Medium](https://medium.com/@ai2060).  
-My Google Scholar profile: [Google Scholar](https://scholar.google.com/citations?user=5RsTfwYAAAAJ).
+My recent work focuses on reliable video reasoning, text-to-image generation, cross-domain image composition, and efficient video generation. I enjoy turning research questions into reproducible experiments and practical systems.
 
-My most popular blog: [A Complete Mathematical Derivation of DDPM: Denoising Diffusion Probabilistic Models](https://medium.com/@ai2060/denoising-diffusion-probabilistic-models-9ff0bfc98167).  
+I have worked on video generation, multimodal reasoning, and generative-model optimization during research internships at Alibaba Cloud, Youku, RightBrainAI, and Megvii. I expect to complete my PhD in June 2027.
 
-My most popular github repo: [Algorithm Template](https://github.com/fikry102/algorithm_template).
+You can find my work on [Google Scholar](https://scholar.google.com/citations?user=5RsTfwYAAAAJ), [GitHub](https://github.com/fikry102), and [my CV](/assets/pdf/qiang-lyu-cv.pdf).
 
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
