@@ -37,6 +37,29 @@ a.btncv:hover {
  * CV TIME_TABLE styles
  *****************************/
 
+// Keep the date badge clear of the position or degree title on wider screens.
+// The original Bootstrap columns were too narrow for longer date ranges.
+@media (min-width: 768px) {
+  .cv .cv-time-col {
+    flex: 0 0 285px;
+    max-width: 285px;
+  }
+
+  .cv .cv-content-col {
+    flex: 1 1 auto;
+    max-width: calc(100% - 285px);
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cv .cv-time-col,
+  .cv .cv-content-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 p.location {
   font-size: 0.7rem;
   white-space: nowrap;
