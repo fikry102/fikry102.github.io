@@ -22,7 +22,10 @@ I am a direct-entry PhD student in Computer Science at the University of Chinese
 
 My recent work focuses on reliable video reasoning, text-to-image generation, cross-domain image composition, and efficient video generation. I enjoy turning research questions into reproducible experiments and practical systems.
 
-Some of my technical posts include [Denoising Diffusion Probabilistic Models](https://ai2060.medium.com/denoising-diffusion-probabilistic-models-9ff0bfc98167?sk=4f5e077e8bc75f347012c4b205020e52) and [Diffusion Models: From SDEs and ODEs to One-Step Generation](https://zhuanlan.zhihu.com/p/2086615062626709520).
+Some of my technical posts include:
+
+- [A Complete Mathematical Derivation of DDPM: Denoising Diffusion Probabilistic Models](https://ai2060.medium.com/denoising-diffusion-probabilistic-models-9ff0bfc98167?sk=4f5e077e8bc75f347012c4b205020e52)
+- [Diffusion Models: From SDEs and ODEs to One-Step Generation](https://zhuanlan.zhihu.com/p/2086615062626709520)
 
 I have worked on video generation, multimodal reasoning, and generative-model optimization during research internships at Alibaba Cloud and Youku, and algorithm internships at RightBrainAI and Megvii. I expect to complete my PhD in June 2027.
 
