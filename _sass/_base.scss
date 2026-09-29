@@ -530,23 +530,6 @@ footer.sticky-bottom {
     }
   }
 
-  .visitor-stats__trend {
-    a {
-      display: block;
-      margin: 0 auto;
-      max-width: 600px;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-      background: #fff;
-      border: 1px solid var(--global-divider-color);
-      border-radius: 0.45rem;
-    }
-  }
-
   .visitor-stats__map {
     display: flex;
     width: 100%;
