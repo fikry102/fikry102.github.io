@@ -73,6 +73,8 @@ layout: default
       </div>
     {% endif %}
 
+    {% include visitor_stats.liquid %}
+
     {% if site.newsletter.enabled and site.footer_fixed %}
       {% include scripts/newsletter.liquid center=true %}
     {% endif %}
