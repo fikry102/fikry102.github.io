@@ -13,6 +13,20 @@
                     </span>
                   </td>
                 </tr>
+                {% if content.side_image %}
+                  <tr>
+                    <td>
+                      <div class="cv-side-visual{% if content.side_image_kind == 'logo' %} cv-side-visual--logo{% else %} cv-side-visual--photo{% endif %}{% if content.side_image_round %} cv-side-visual--round{% endif %}">
+                        <img
+                          src="{{ content.side_image | relative_url }}"
+                          alt="{{ content.side_image_alt | default: '' }}"
+                          class="cv-side-image"
+                          loading="lazy"
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                {% endif %}
                 {% if content.location %}
                   <tr>
                     <td>
@@ -42,18 +56,8 @@
               <tbody>
                 {% if content.institution %}
                   <tr>
-                    <td class="institution-logo-cell">
-                      {% if content.institution_logo %}
-                        <img
-                          src="{{ content.institution_logo | relative_url }}"
-                          alt=""
-                          class="cv-institution-logo{% if content.institution_logo_round %} cv-institution-logo--round{% endif %}"
-                          loading="lazy"
-                          aria-hidden="true"
-                        >
-                      {% else %}
-                        <i class="fa-solid fa-building-columns iconinstitution"></i>
-                      {% endif %}
+                    <td style="vertical-align: top; text-align: center">
+                      <i class="fa-solid fa-building-columns iconinstitution"></i>
                     </td>
                     <td class="institution">{{ content.institution }}</td>
                   </tr>

@@ -17,38 +17,54 @@
   contents:
     - title: PhD in Computer Science
       institution: University of Chinese Academy of Sciences
-      institution_logo: /assets/img/institution_logos/ucas.png
+      side_image: /assets/img/institution_logos/ucas.png
+      side_image_kind: logo
+      side_image_alt: University of Chinese Academy of Sciences logo
       year: 2020 - 2027 (expected)
       description:
         - Research on generative models, multimodal understanding, and reinforcement learning.
     - title: B.Eng. in Computer Science and Technology
       institution: Wuhan University
-      institution_logo: /assets/img/institution_logos/whu.png
-      institution_logo_round: true
+      side_image: /assets/img/institution_logos/whu.png
+      side_image_kind: logo
+      side_image_round: true
+      side_image_alt: Wuhan University logo
       year: 2016 - 2020
 
-- title: Research Experience
+- title: Internship Experience
   type: time_table
   contents:
     - title: Research Intern
       institution: Alibaba Cloud
+      side_image: /assets/img/company_photos/alibaba-cloud.jpg
+      side_image_kind: photo
+      side_image_alt: Alibaba Cloud workplace
       year: Nov 2025 - Jun 2026
       description:
         - Prompt engineering and multimodal image understanding for Qwen-Image generation and editing.
         - Contributed to efficient video generation and few-step video distillation research.
     - title: Research Intern
       institution: Youku, Alibaba
+      side_image: /assets/img/company_photos/youku.jpg
+      side_image_kind: photo
+      side_image_alt: Youku workplace event
       year: Nov 2024 - Nov 2025
       description:
         - Video reasoning and multimodal reinforcement learning.
         - Developed Video-Aligner with teacher supervision from the original video branch and consistency rewards for degraded video branches.
     - title: Algorithm Intern
       institution: RightBrainAI
+      side_image: /assets/img/company_photos/rightbrain.jpg
+      side_image_kind: photo
+      side_image_alt: RightBrainAI office
       year: Oct 2024 - Nov 2024
       description:
         - Speech-driven human video generation based on Stable Video Diffusion and mouth-region masking.
     - title: Algorithm Intern
       institution: Megvii
+      side_image: /assets/img/company_photos/megvii.jpg
+      side_image_kind: photo
+      side_image_alt: View from Megvii office
       year: Jul 2024 - Sep 2024
       description:
         - Open-Sora-based autonomous-driving video generation conditioned on BEV scene layouts.

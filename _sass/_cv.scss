@@ -76,29 +76,51 @@ i.iconinstitution {
   margin-right: 0.3rem;
 }
 
-td.institution-logo-cell {
-  vertical-align: middle;
-  text-align: center;
+.cv-side-visual {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.15rem;
+  padding: 0 1rem;
 }
 
-img.cv-institution-logo {
+.cv-side-image {
   display: block;
   width: auto;
-  max-width: 7.5rem;
   height: auto;
-  max-height: 2rem;
-  margin-right: 0.55rem;
   object-fit: contain;
 }
 
-img.cv-institution-logo--round {
+.cv-side-visual--logo .cv-side-image {
+  max-width: 235px;
+  max-height: 110px;
+}
+
+.cv-side-visual--round .cv-side-image {
+  max-width: 112px;
+  max-height: 112px;
   border-radius: 50%;
 }
 
-@media (max-width: 575px) {
-  img.cv-institution-logo {
-    max-width: 5.75rem;
-    max-height: 1.7rem;
+.cv-side-visual--photo .cv-side-image {
+  width: 235px;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.65rem rgba(0, 0, 0, 0.14);
+}
+
+@media (max-width: 767.98px) {
+  .cv-side-visual {
+    margin: 1rem auto 0.5rem;
+  }
+
+  .cv-side-visual--logo .cv-side-image {
+    max-width: min(235px, 82vw);
+  }
+
+  .cv-side-visual--photo .cv-side-image {
+    width: min(235px, 82vw);
   }
 }
 
