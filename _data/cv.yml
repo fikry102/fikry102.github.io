@@ -17,11 +17,14 @@
   contents:
     - title: PhD in Computer Science
       institution: University of Chinese Academy of Sciences
+      institution_logo: /assets/img/institution_logos/ucas.png
       year: 2020 - 2027 (expected)
       description:
         - Research on generative models, multimodal understanding, and reinforcement learning.
     - title: B.Eng. in Computer Science and Technology
       institution: Wuhan University
+      institution_logo: /assets/img/institution_logos/whu.png
+      institution_logo_round: true
       year: 2016 - 2020
 
 - title: Research Experience

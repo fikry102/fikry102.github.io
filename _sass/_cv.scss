@@ -76,6 +76,32 @@ i.iconinstitution {
   margin-right: 0.3rem;
 }
 
+td.institution-logo-cell {
+  vertical-align: middle;
+  text-align: center;
+}
+
+img.cv-institution-logo {
+  display: block;
+  width: auto;
+  max-width: 7.5rem;
+  height: auto;
+  max-height: 2rem;
+  margin-right: 0.55rem;
+  object-fit: contain;
+}
+
+img.cv-institution-logo--round {
+  border-radius: 50%;
+}
+
+@media (max-width: 575px) {
+  img.cv-institution-logo {
+    max-width: 5.75rem;
+    max-height: 1.7rem;
+  }
+}
+
 i.icondepartment {
   color: var(--global-theme-color);
   font-size: 0.8rem;
