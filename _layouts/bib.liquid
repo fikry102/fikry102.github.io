@@ -53,8 +53,8 @@
       {% assign author_array_size = entry.author_array | size %}
 
       {% assign author_array_limit = author_array_size %}
-      {% if entry.author_limit %}
-        {% assign author_array_limit = entry.author_limit | plus: 0 %}
+      {% if entry.key == 'lyu2026divide' %}
+        {% assign author_array_limit = 8 %}
       {% elsif site.max_author_limit and author_array_size > site.max_author_limit %}
         {% assign author_array_limit = site.max_author_limit %}
       {% endif %}
@@ -104,7 +104,7 @@
 
       {%- assign more_authors_hide = more_authors | append: ' more author' -%}
       {% if more_authors > 0 %}
-        {% if entry.author_tail == 'others' %}
+        {% if entry.key == 'lyu2026divide' %}
           , and others
         {% else %}
           {%- if more_authors > 1 -%}
