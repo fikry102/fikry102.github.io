@@ -34,7 +34,7 @@ You can find my work on [Google Scholar](https://scholar.google.com/citations?us
 
 Reviewer for *IEEE Transactions on Image Processing* (TIP), 2026-11-03. See [Web of Science profile](https://www.webofscience.com/wos/author/record/RLJ-7657-2026).
 
-<!-- Deployment retry: 2026-11-07 -->
+<!-- Deployment retry after account verification: 2026-11-07 -->
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
