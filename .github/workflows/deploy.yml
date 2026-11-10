@@ -77,6 +77,8 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
+      - name: Setup image tools 🖼️
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
@@ -95,6 +97,8 @@ jobs:
               {
                 echo "--- build output (first 80 lines) ---"
                 head -n 80 "$build_log"
+                echo "--- likely error lines ---"
+                grep -inE -C 4 "error|exception|invalid|unexpected|failed|fatal|syntax" "$build_log" || true
                 echo "--- build output (last 30 lines) ---"
                 tail -n 30 "$build_log"
               }
