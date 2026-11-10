@@ -95,12 +95,10 @@ jobs:
           if ! bundle exec jekyll build 2>&1 | tee "$build_log"; then
             message="$(
               {
-                echo "--- build output (first 80 lines) ---"
-                head -n 80 "$build_log"
                 echo "--- likely error lines ---"
-                grep -inE -C 4 "error|exception|invalid|unexpected|failed|fatal|syntax" "$build_log" || true
-                echo "--- build output (last 30 lines) ---"
-                tail -n 30 "$build_log"
+                grep -inE -C 6 "error|exception|invalid|unexpected|failed|fatal|syntax" "$build_log" || true
+                echo "--- build output (last 80 lines) ---"
+                tail -n 80 "$build_log"
               }
             )"
             message="${message//'%'/'%25'}"
