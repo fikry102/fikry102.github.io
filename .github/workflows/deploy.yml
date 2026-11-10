@@ -86,9 +86,18 @@ jobs:
           value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
+          set -o pipefail
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
-          bundle exec jekyll build
+          build_log="$(mktemp)"
+          if ! bundle exec jekyll build 2>&1 | tee "$build_log"; then
+            message="$(tail -n 40 "$build_log")"
+            message="${message//'%'/'%25'}"
+            message="${message//$'\n'/'%0A'}"
+            message="${message//$'\r'/'%0D'}"
+            echo "::error title=Jekyll build failed::$message"
+            exit 1
+          fi
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
