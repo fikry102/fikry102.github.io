@@ -15,6 +15,7 @@ hero:
   eyebrow: PhD Researcher · UCAS
   summary: I study generative models, multimodal understanding, and reinforcement learning, with a focus on making visual generation and reasoning more reliable and effective.
   tags:
+    - Few-Shot Learning
     - Generative Models
     - Multimodal Reasoning
     - Reinforcement Learning
@@ -36,22 +37,28 @@ hero:
 
 research_themes:
   - number: "01"
-    label: Multimodal reasoning
-    title: Reliable video reasoning
-    description: Teacher-supervised consistency rewards for video reasoning under spatial and temporal degradation.
-    project: Video-Aligner
+    label: Few-shot learning
+    title: Learning from limited examples
+    description: Compositional prototypes and adaptive fusion for transferring reusable component representations to novel visual classes.
+    project: Compositional Prototypical Networks
+    url: https://ojs.aaai.org/index.php/AAAI/article/view/26082
   - number: "02"
+    label: Cross-domain composition
+    title: Training-based image composition
+    description: Style-transfer regularization and collage priors for high-quality image composition across diverse visual domains.
+    project: StyleCom
+    url: https://github.com/fikry102/StyleCom
+  - number: "03"
     label: Generative-model optimization
     title: Reinforcement learning for image generation
     description: Tree-based trajectories and multi-group advantage estimation for optimizing text-to-image models with multiple rewards.
     project: Multi-GRPO
     url: https://github.com/fikry102/Multi-GRPO
-  - number: "03"
-    label: Visual generation
-    title: Controllable and efficient generation
-    description: Cross-domain image composition, prompt engineering, and efficient video generation and distillation.
-    project: StyleCom and related work
-    url: https://github.com/fikry102/StyleCom
+  - number: "04"
+    label: Multimodal reasoning
+    title: Reliable video reasoning
+    description: Teacher-supervised consistency rewards for video reasoning under spatial and temporal degradation.
+    project: Video-Aligner
 
 writing:
   - index: "01"
@@ -80,6 +87,6 @@ social: false
 
 ## Research in practice
 
-I am a direct-entry PhD student in Computer Science at the University of Chinese Academy of Sciences. My recent work spans reliable video reasoning, text-to-image generation, cross-domain image composition, and efficient video generation.
+I am a direct-entry PhD student in Computer Science at the University of Chinese Academy of Sciences. My work spans few-shot learning, reliable video reasoning, text-to-image generation, cross-domain image composition, and efficient video generation.
 
 Across research internships at Alibaba Cloud and Youku, and algorithm internships at RightBrainAI and Megvii, I have worked on problems ranging from multimodal reinforcement learning to controllable video generation. I enjoy turning open-ended research questions into reproducible experiments and practical systems. I expect to complete my PhD in June 2027.
