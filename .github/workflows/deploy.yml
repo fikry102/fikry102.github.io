@@ -91,7 +91,14 @@ jobs:
           export JEKYLL_ENV=production
           build_log="$(mktemp)"
           if ! bundle exec jekyll build 2>&1 | tee "$build_log"; then
-            message="$(tail -n 40 "$build_log")"
+            message="$(
+              {
+                echo "--- build output (first 80 lines) ---"
+                head -n 80 "$build_log"
+                echo "--- build output (last 30 lines) ---"
+                tail -n 30 "$build_log"
+              }
+            )"
             message="${message//'%'/'%25'}"
             message="${message//$'\n'/'%0A'}"
             message="${message//$'\r'/'%0D'}"
