@@ -2,42 +2,84 @@
 layout: about
 title: about
 permalink: /
-# subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
   image: fikry.jpg
-  image_circular: false # crops the image to make it circular
+  image_alt: Golden checkmark artwork representing the motto Do what's right
+  image_circular: false
   more_info: >
     <p class="profile-motto">Do what’s right.</p>
 
-news: false # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+hero:
+  eyebrow: PhD Researcher · UCAS
+  summary: I study generative models, multimodal understanding, and reinforcement learning, with a focus on making visual generation and reasoning more reliable and effective.
+  tags:
+    - Generative Models
+    - Multimodal Reasoning
+    - Reinforcement Learning
+  links:
+    - label: Google Scholar
+      url: https://scholar.google.com/citations?user=5RsTfwYAAAAJ
+      icon: ai ai-google-scholar
+      external: true
+    - label: GitHub
+      url: https://github.com/fikry102
+      icon: fa-brands fa-github
+      external: true
+    - label: CV
+      url: /cv/
+      icon: fa-regular fa-file-lines
+    - label: Email
+      url: mailto:luqiang20@mails.ucas.ac.cn
+      icon: fa-regular fa-envelope
+
+research_themes:
+  - number: "01"
+    label: Multimodal reasoning
+    title: Reliable video reasoning
+    description: Teacher-supervised consistency rewards for video reasoning under spatial and temporal degradation.
+    project: Video-Aligner
+  - number: "02"
+    label: Generative-model optimization
+    title: Reinforcement learning for image generation
+    description: Tree-based trajectories and multi-group advantage estimation for optimizing text-to-image models with multiple rewards.
+    project: Multi-GRPO
+    url: https://github.com/fikry102/Multi-GRPO
+  - number: "03"
+    label: Visual generation
+    title: Controllable and efficient generation
+    description: Cross-domain image composition, prompt engineering, and efficient video generation and distillation.
+    project: StyleCom and related work
+    url: https://github.com/fikry102/StyleCom
+
+writing:
+  - index: "01"
+    title: "A Complete Mathematical Derivation of DDPM: Denoising Diffusion Probabilistic Models"
+    platform: Medium
+    url: https://ai2060.medium.com/denoising-diffusion-probabilistic-models-9ff0bfc98167?sk=4f5e077e8bc75f347012c4b205020e52
+  - index: "02"
+    title: "Flow-GRPO: Training Flow Matching Models via Online RL"
+    platform: Medium
+    url: https://medium.com/@ai2060/flow-grpo-training-flow-matching-models-via-online-rl-e016cbee7258?sk=1812101004117261bd4adfaec4ecba5f
+  - index: "03"
+    title: "Diffusion Models: From SDEs and ODEs to One-Step Generation"
+    platform: Zhihu
+    url: https://zhuanlan.zhihu.com/p/2086615062626709520
+
+academic_service:
+  role: Reviewer
+  venue: IEEE Transactions on Image Processing (TIP)
+  date: 2026-11-03
+  url: https://www.webofscience.com/wos/author/record/RLJ-7657-2026
+
+news: false
+selected_papers: true
+social: false
 ---
 
-I am a direct-entry PhD student in Computer Science at the University of Chinese Academy of Sciences (UCAS), where I work on **generative models, multimodal understanding, and reinforcement learning**.
+## Research in practice
 
-My recent work focuses on reliable video reasoning, text-to-image generation, cross-domain image composition, and efficient video generation. I enjoy turning research questions into reproducible experiments and practical systems.
+I am a direct-entry PhD student in Computer Science at the University of Chinese Academy of Sciences. My recent work spans reliable video reasoning, text-to-image generation, cross-domain image composition, and efficient video generation.
 
-Some of my technical posts include:
-
-- [A Complete Mathematical Derivation of DDPM: Denoising Diffusion Probabilistic Models](https://ai2060.medium.com/denoising-diffusion-probabilistic-models-9ff0bfc98167?sk=4f5e077e8bc75f347012c4b205020e52)
-- [Flow-GRPO: Training Flow Matching Models via Online RL](https://medium.com/@ai2060/flow-grpo-training-flow-matching-models-via-online-rl-e016cbee7258?sk=1812101004117261bd4adfaec4ecba5f)
-- [Diffusion Models: From SDEs and ODEs to One-Step Generation](https://zhuanlan.zhihu.com/p/2086615062626709520)
-
-I have worked on video generation, multimodal reasoning, and generative-model optimization during research internships at Alibaba Cloud and Youku, and algorithm internships at RightBrainAI and Megvii. I expect to complete my PhD in June 2027.
-
-You can find my work on [Google Scholar](https://scholar.google.com/citations?user=5RsTfwYAAAAJ) and [GitHub](https://github.com/fikry102).
-
-## Academic service
-
-Reviewer for *IEEE Transactions on Image Processing* (TIP), 2026-11-03. See [Web of Science profile](https://www.webofscience.com/wos/author/record/RLJ-7657-2026).
-
-<!-- Deployment retry after support follow-up: 2026-11-10 -->
-
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+Across research internships at Alibaba Cloud and Youku, and algorithm internships at RightBrainAI and Megvii, I have worked on problems ranging from multimodal reinforcement learning to controllable video generation. I enjoy turning open-ended research questions into reproducible experiments and practical systems. I expect to complete my PhD in June 2027.

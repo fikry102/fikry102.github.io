@@ -184,9 +184,15 @@
     <div class="periodical">
       {{ periodical | strip }}
     </div>
-    <div class="periodical">
-      {{ entry.note | strip }}
-    </div>
+    {% assign publication_note = entry.note | strip %}
+    {% if publication_note != '' %}
+      {% assign publication_note_key = publication_note | downcase %}
+      <div
+        class="periodical publication-status{% if publication_note_key contains 'accepted' %} publication-status--accepted{% elsif publication_note_key contains 'submitted' %} publication-status--submitted{% endif %}"
+      >
+        {{ publication_note }}
+      </div>
+    {% endif %}
 
     <!-- Links/Buttons -->
     <div class="links">

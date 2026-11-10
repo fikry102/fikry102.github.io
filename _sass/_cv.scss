@@ -37,9 +37,8 @@ a.btncv:hover {
  * CV TIME_TABLE styles
  *****************************/
 
-// Keep the date badge clear of the position or degree title on wider screens.
-// The original Bootstrap columns were too narrow for longer date ranges.
-@media (min-width: 768px) {
+// Keep the date badge and supporting visual clear of the main content on wide screens.
+@media (min-width: 992px) {
   .cv .cv-time-col {
     flex: 0 0 285px;
     max-width: 285px;
@@ -52,12 +51,52 @@ a.btncv:hover {
   }
 }
 
-@media (max-width: 767.98px) {
-  .cv .cv-time-col,
-  .cv .cv-content-col {
-    flex: 0 0 100%;
-    max-width: 100%;
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cv .cv-time-col {
+    flex: 0 0 205px;
+    max-width: 205px;
   }
+
+  .cv .cv-content-col {
+    flex: 1 1 auto;
+    max-width: calc(100% - 205px);
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cv .list-group-item > .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cv .cv-time-col {
+    display: contents;
+  }
+
+  .cv .cv-date-block {
+    order: 1;
+    padding: 0 0.25rem;
+    text-align: left;
+  }
+
+  .cv .cv-content-col {
+    order: 2;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .cv .cv-side-visual {
+    order: 3;
+  }
+
+  .cv .cv-location-block {
+    order: 4;
+  }
+}
+
+.cv-date-block .badge {
+  min-width: 75px;
 }
 
 p.location {
@@ -78,9 +117,17 @@ i.iconinstitution {
 
 .cv-side-visual {
   display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-top: 1.15rem;
   padding: 0 1rem;
+}
+
+.cv-side-visual picture {
+  display: block;
+  line-height: 0;
 }
 
 .cv-side-image {
@@ -108,11 +155,40 @@ i.iconinstitution {
   object-fit: cover;
   border-radius: 0.5rem;
   box-shadow: 0 0.2rem 0.65rem rgba(0, 0, 0, 0.14);
+  cursor: zoom-in;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.cv-side-visual--photo:hover .cv-side-image,
+.cv-side-visual--photo:focus-within .cv-side-image {
+  transform: translateY(-2px);
+  box-shadow: 0 0.45rem 1rem rgba(0, 0, 0, 0.18);
+}
+
+.cv-side-image-hint {
+  margin-top: 0.45rem;
+  color: var(--global-text-color-light);
+  font-size: 0.67rem;
+  letter-spacing: 0.02em;
+}
+
+.cv-side-image-hint i {
+  margin-right: 0.2rem;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cv-side-visual--logo .cv-side-image {
+    max-width: 185px;
+  }
+
+  .cv-side-visual--photo .cv-side-image {
+    width: 185px;
+  }
 }
 
 @media (max-width: 767.98px) {
   .cv-side-visual {
-    margin: 1rem auto 0.5rem;
+    margin: 0.65rem auto 0.35rem;
   }
 
   .cv-side-visual--logo .cv-side-image {
@@ -120,7 +196,13 @@ i.iconinstitution {
   }
 
   .cv-side-visual--photo .cv-side-image {
-    width: min(235px, 82vw);
+    width: min(420px, 84vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-side-visual--photo .cv-side-image {
+    transition: none;
   }
 }
 

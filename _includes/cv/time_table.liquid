@@ -4,41 +4,52 @@
       <div class="row">
         {% if content.year %}
           <div class="cv-time-col text-center">
-            <table class="table-cv">
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
-                      {{- content.year -}}
-                    </span>
-                  </td>
-                </tr>
-                {% if content.side_image %}
-                  <tr>
-                    <td>
-                      <div class="cv-side-visual{% if content.side_image_kind == 'logo' %} cv-side-visual--logo{% else %} cv-side-visual--photo{% endif %}{% if content.side_image_round %} cv-side-visual--round{% endif %}">
-                        <img
-                          src="{{ content.side_image | relative_url }}"
-                          alt="{{ content.side_image_alt | default: '' }}"
-                          class="cv-side-image"
-                          loading="lazy"
-                        >
-                      </div>
-                    </td>
-                  </tr>
+            <div class="cv-date-block">
+              <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle">
+                {{- content.year -}}
+              </span>
+            </div>
+            {% if content.side_image %}
+              {% assign side_image_path = content.side_image | relative_url %}
+              <div class="cv-side-visual{% if content.side_image_kind == 'logo' %} cv-side-visual--logo{% else %} cv-side-visual--photo{% endif %}{% if content.side_image_round %} cv-side-visual--round{% endif %}">
+                {% if content.side_image_kind == 'photo' %}
+                  {% assign side_image_stem = content.side_image | remove: '.jpg' | remove: '.jpeg' | remove: '.png' %}
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="{{ side_image_stem | append: '-480.webp' | relative_url }} 480w, {{ side_image_stem | append: '-800.webp' | relative_url }} 800w, {{ side_image_stem | append: '-1200.webp' | relative_url }} 1200w"
+                      sizes="(min-width: 992px) 235px, (min-width: 768px) 190px, min(84vw, 420px)"
+                    >
+                    <img
+                      src="{{ side_image_path }}"
+                      alt="{{ content.side_image_alt | default: '' }}"
+                      class="cv-side-image"
+                      width="1200"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                      data-zoomable
+                      data-zoom-src="{{ side_image_path }}"
+                    >
+                  </picture>
+                  <span class="cv-side-image-hint" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i> View photo</span>
+                {% else %}
+                  <img
+                    src="{{ side_image_path }}"
+                    alt="{{ content.side_image_alt | default: '' }}"
+                    class="cv-side-image"
+                    loading="lazy"
+                    decoding="async"
+                  >
                 {% endif %}
-                {% if content.location %}
-                  <tr>
-                    <td>
-                      <p class="location">
-                        <i class="fa-solid fa-location-dot iconlocation"></i>
-                        {{ content.location }}
-                      </p>
-                    </td>
-                  </tr>
-                {% endif %}
-              </tbody>
-            </table>
+              </div>
+            {% endif %}
+            {% if content.location %}
+              <p class="location cv-location-block">
+                <i class="fa-solid fa-location-dot iconlocation"></i>
+                {{ content.location }}
+              </p>
+            {% endif %}
           </div>
         {% endif %}
         <div class="cv-content-col mt-2 mt-md-0">

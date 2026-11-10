@@ -77,11 +77,21 @@
       description:
         - Training-based cross-domain image composition with style transfer and collage priors.
         - Built the OpenImages-Style-600k dataset and led model training and experiments.
+      linkitems:
+        - linkname: Paper
+          link: https://doi.org/10.1145/3767308.3835612
+        - linkname: Code
+          link: https://github.com/fikry102/StyleCom
     - title: Multi-GRPO
       year: 2025 - 2026
       description:
         - Tree-based trajectory sampling and multi-group advantage estimation for text-to-image reinforcement learning.
         - Constructed the OCR-Color-10 text-rendering dataset with explicit color constraints.
+      linkitems:
+        - linkname: arXiv
+          link: https://arxiv.org/abs/2512.00743
+        - linkname: Code
+          link: https://github.com/fikry102/Multi-GRPO
     - title: Video-Aligner
       year: 2025 - 2026
       description:
@@ -90,6 +100,11 @@
       year: 2023
       description:
         - Component prototypes and adaptive fusion for few-shot image classification.
+      linkitems:
+        - linkname: Paper
+          link: https://ojs.aaai.org/index.php/AAAI/article/view/26082
+        - linkname: Code
+          link: https://github.com/fikry102/CPN
 
 - title: Patent
   type: time_table
@@ -109,4 +124,4 @@
         - Python, PyTorch, C/C++, Hugging Face, Git, Linux, LaTeX
     - title: AI-assisted programming
       items:
-        - Claude Code and Codex
+        - Extensive experience with Claude Code, Codex, and related AI coding tools

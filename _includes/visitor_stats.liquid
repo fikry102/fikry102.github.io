@@ -27,16 +27,50 @@
     <div class="visitor-stats__panel">
       <h3>Live visitor map</h3>
       <div id="visitor-map" class="visitor-stats__map" aria-label="Map showing visitor locations">
-        <script id="_wauf10">
-          var _wau_opt = { target: '_blank', fd: true };
-          var visitorMap = document.getElementById('visitor-map');
-          var visitorMapWidth = Math.min(420, Math.max(220, Math.floor(visitorMap.clientWidth || window.innerWidth - 64)));
-          var visitorMapHeight = Math.round(visitorMapWidth / 2);
-          var _wau = _wau || [];
-          _wau.push(['map', 'k3r8m1p7q2', 'f10', String(visitorMapWidth), String(visitorMapHeight), 'heatmode', 'default-pink']);
-        </script>
-        <script async src="https://waust.at/m.js"></script>
+        <span class="visitor-stats__map-placeholder" aria-hidden="true">
+          <i class="fa-solid fa-location-dot"></i>
+          Loading the live map when it comes into view
+        </span>
       </div>
+      <script>
+        (() => {
+          const visitorMap = document.getElementById('visitor-map');
+          if (!visitorMap) return;
+
+          const loadVisitorMap = () => {
+            if (visitorMap.dataset.loaded === 'true') return;
+            visitorMap.dataset.loaded = 'true';
+            visitorMap.querySelector('.visitor-stats__map-placeholder')?.remove();
+
+            const mapWidth = Math.min(420, Math.max(220, Math.floor(visitorMap.clientWidth || window.innerWidth - 64)));
+            const mapHeight = Math.round(mapWidth / 2);
+            window._wau_opt = { target: '_blank', fd: true };
+            window._wau = window._wau || [];
+            window._wau.push(['map', 'k3r8m1p7q2', 'f10', String(mapWidth), String(mapHeight), 'heatmode', 'default-pink']);
+
+            const mapScript = document.createElement('script');
+            mapScript.async = true;
+            mapScript.src = 'https://waust.at/m.js';
+            visitorMap.appendChild(mapScript);
+          };
+
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(
+              (entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                  observer.disconnect();
+                  loadVisitorMap();
+                }
+              },
+              { rootMargin: '320px 0px' }
+            );
+            observer.observe(visitorMap);
+          } else {
+            loadVisitorMap();
+          }
+        })();
+      </script>
+      <noscript><p class="visitor-stats__fallback">Enable JavaScript to view the live visitor map.</p></noscript>
     </div>
   </div>
 </section>

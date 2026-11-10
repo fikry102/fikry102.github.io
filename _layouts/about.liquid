@@ -1,74 +1,178 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
+<div class="home">
+  <header class="home-hero">
+    <div class="home-hero__content">
+      {% if page.hero.eyebrow %}
+        <p class="home-hero__eyebrow">{{ page.hero.eyebrow }}</p>
       {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
 
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
+      <h1 class="home-hero__title">
+        {% if site.title == 'blank' %}
+          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </h1>
+
+      {% if page.hero.summary %}
+        <p class="home-hero__summary">{{ page.hero.summary }}</p>
+      {% endif %}
+
+      {% if page.hero.tags %}
+        <div class="home-hero__tags" aria-label="Research interests">
+          {% for tag in page.hero.tags %}
+            <span>{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if page.hero.links %}
+        <nav class="home-hero__actions" aria-label="Profile links">
+          {% for link in page.hero.links %}
+            {% if link.external or link.url contains 'mailto:' %}
+              {% assign hero_link_url = link.url %}
+            {% else %}
+              {% assign hero_link_url = link.url | relative_url %}
+            {% endif %}
+            <a
+              class="home-hero__action{% if forloop.first %} home-hero__action--primary{% endif %}"
+              href="{{ hero_link_url }}"
+              {% if link.external %}target="_blank" rel="external nofollow noopener"{% endif %}
+            >
+              {% if link.icon %}<i class="{{ link.icon }}" aria-hidden="true"></i>{% endif %}
+              <span>{{ link.label }}</span>
+            </a>
+          {% endfor %}
+        </nav>
+      {% endif %}
+    </div>
+
+    {% if page.profile and page.profile.image %}
+      <div class="home-hero__visual">
+        <div class="home-hero__image-wrap">
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% assign profile_image_class = 'home-hero__image rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+            {% assign profile_image_class = 'home-hero__image rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) 300px, (min-width: 576px) 34vw, 240px{% endcapture %}
           {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            include figure.liquid
+            loading="eager"
+            path=profile_image_path
+            class=profile_image_class
+            sizes=sizes
+            alt=page.profile.image_alt
+            width="460"
+            height="460"
             cache_bust=true
           %}
-        {% endif %}
+        </div>
         {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
+          <div class="home-hero__motto">{{ page.profile.more_info }}</div>
         {% endif %}
       </div>
     {% endif %}
+  </header>
 
-    <div class="clearfix">{{ content }}</div>
+  <main class="home-main">
+    {% if page.research_themes %}
+      <section class="home-section" aria-labelledby="research-themes-title">
+        <div class="home-section__heading">
+          <div>
+            <p class="home-section__eyebrow">What I work on</p>
+            <h2 id="research-themes-title">Research themes</h2>
+          </div>
+        </div>
 
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
+        <div class="home-research-grid">
+          {% for item in page.research_themes %}
+            <article class="home-research-card">
+              <div class="home-research-card__topline">
+                <span class="home-research-card__number">{{ item.number }}</span>
+                <span class="home-research-card__label">{{ item.label }}</span>
+              </div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              {% if item.url %}
+                <a href="{{ item.url }}" target="_blank" rel="external nofollow noopener">
+                  {{ item.project }} <span aria-hidden="true">↗</span>
+                </a>
+              {% else %}
+                <span class="home-research-card__project">{{ item.project }}</span>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
     {% endif %}
 
-    <!-- Latest posts -->
-    {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
+    <section class="home-section home-section--narrative">
+      <div class="home-copy">{{ content }}</div>
+    </section>
 
-    <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
+      <section class="home-section home-section--publications" aria-labelledby="selected-publications-title">
+        <div class="home-section__heading">
+          <div>
+            <p class="home-section__eyebrow">Research output</p>
+            <h2 id="selected-publications-title">Selected publications</h2>
+          </div>
+          <a class="home-section__link" href="{{ '/publications/' | relative_url }}">
+            All publications <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        {% include selected_papers.liquid %}
+      </section>
     {% endif %}
 
-    <!-- Social -->
+    {% if page.writing %}
+      <section class="home-section" aria-labelledby="technical-writing-title">
+        <div class="home-section__heading">
+          <div>
+            <p class="home-section__eyebrow">Notes and explainers</p>
+            <h2 id="technical-writing-title">Technical writing</h2>
+          </div>
+        </div>
+        <div class="home-writing-list">
+          {% for post in page.writing %}
+            <a class="home-writing-item" href="{{ post.url }}" target="_blank" rel="external nofollow noopener">
+              <span class="home-writing-item__index">{{ post.index }}</span>
+              <span class="home-writing-item__title">{{ post.title }}</span>
+              <span class="home-writing-item__platform">{{ post.platform }}</span>
+              <span class="home-writing-item__arrow" aria-hidden="true">↗</span>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if page.academic_service %}
+      <section class="home-section" aria-labelledby="academic-service-title">
+        <div class="home-section__heading">
+          <div>
+            <p class="home-section__eyebrow">Community</p>
+            <h2 id="academic-service-title">Academic service</h2>
+          </div>
+        </div>
+        <a class="home-service-card" href="{{ page.academic_service.url }}" target="_blank" rel="external nofollow noopener">
+          <span class="home-service-card__icon" aria-hidden="true"><i class="fa-regular fa-pen-to-square"></i></span>
+          <span class="home-service-card__copy">
+            <strong>{{ page.academic_service.role }}</strong>
+            <span>{{ page.academic_service.venue }}</span>
+          </span>
+          <time datetime="{{ page.academic_service.date }}">{{ page.academic_service.date }}</time>
+          <span class="home-service-card__arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+    {% endif %}
+
     {% if page.social %}
       <div class="social">
         <div class="contact-icons">{% include social.liquid %}</div>
-
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
@@ -78,5 +182,5 @@ layout: default
     {% if site.newsletter.enabled and site.footer_fixed %}
       {% include scripts/newsletter.liquid center=true %}
     {% endif %}
-  </article>
+  </main>
 </div>
