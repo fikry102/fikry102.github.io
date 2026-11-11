@@ -12,7 +12,7 @@ profile:
     <p class="profile-motto">Do what’s right.</p>
 
 hero:
-  eyebrow: PhD Researcher · UCAS
+  eyebrow: PhD Student · University of Chinese Academy of Sciences (UCAS)
   summary: I study generative models, multimodal understanding, and reinforcement learning, with a focus on making visual generation and reasoning more reliable and effective.
   tags:
     - Few-Shot Learning

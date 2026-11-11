@@ -73,6 +73,9 @@
   type: time_table
   contents:
     - title: StyleCom
+      side_image: /assets/img/research_photos/acmmm-2026.jpg
+      side_image_kind: photo
+      side_image_alt: ACM Multimedia 2026 conference venue in Rio de Janeiro, Brazil
       year: 2026
       description:
         - Training-based cross-domain image composition with style transfer and collage priors.
