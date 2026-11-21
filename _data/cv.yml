@@ -83,6 +83,8 @@
       linkitems:
         - linkname: Paper
           link: https://doi.org/10.1145/3767308.3835612
+        - linkname: Kudos
+          link: https://www.growkudos.com/publications/10.1145%25252F3767308.3835612/reader
         - linkname: Code
           link: https://github.com/fikry102/StyleCom
     - title: Multi-GRPO
