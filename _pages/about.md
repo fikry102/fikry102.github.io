@@ -74,7 +74,7 @@ writing:
     platform: Zhihu
     url: https://zhuanlan.zhihu.com/p/2086615062626709520
   - index: "04"
-    title: "GRPO 进阶：稳定化、DAPO、GSPO、SAPO 与 Mid-training"
+    title: "Beyond GRPO: Stabilization, DAPO, GSPO, SAPO, and Mid-Training"
     platform: Zhihu
     url: https://zhuanlan.zhihu.com/p/2095937971048428358
 
